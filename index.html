@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charge Hockey</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charge Hockey</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(to right bottom, darkgray, lightgray);
+    }
+    h1 {
+      position: absolute;
+      bottom: 0;
+      text-align: center;
+      width: 100%;
+    }
+    #display {
+      width: 800px;
+      height: 650px;
+    }
+  </style>
 </head>
 <body>
-    <h1>CHARGE HOCKEY</h1>
-    <canvas id="display" width="800" height="650"></canvas>
-    <script type="module" src="pkg/charge_hockey.js"></script>
-    <script type="module" src="game/main.js"></script>
+  <canvas id="display"></canvas>
+  <h1>CHARGE HOCKEY</h1>
+  <script type="module" src="pkg/charge_hockey.js"></script>
+  <script type="module" src="game/main.js"></script>
 </body>
 </html>
