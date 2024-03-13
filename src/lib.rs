@@ -96,7 +96,7 @@ pub struct State {
 lazy_static! {
     pub static ref BASE_STATE: Arc<RwLock<State>> = Arc::new(RwLock::new(State { pause: false, neg_puck: false, puck_x: 150.0, puck_y: 300.0, goal_x: 650.0, goal_y: 300.0, attached_charge: 0, win_state: 0, walls: [None; 128], physics: None, charges: [None; 128] }));
     pub static ref CURRENT_STATE: Arc<RwLock<Option<State>>> = Arc::new(RwLock::new(None));
-    pub static ref PHYSICS: Arc<RwLock<PhysicsPipeline>> = Arc::new(RwLock::new(PhysicsPipeline::new()));
+    pub static ref PHYSICS: Arc<RwLock<PhysicsPipeline>> = Arc::new(RwLock::new(PhysicsPipeline::new())); // did this to avoid making a new pipeline every physics step
 }
 
 pub mod physics;
