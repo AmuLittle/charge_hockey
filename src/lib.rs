@@ -2,7 +2,7 @@ use lazy_static::lazy_static;
 use std::sync::{Arc, RwLock};
 use wasm_bindgen::prelude::*;
 use nalgebra::base::Vector2;
-use rapier2d::pipeline::{EventHandler, PhysicsPipeline, PhysicsHooks, QueryPipeline};
+use rapier2d::pipeline::{EventHandler, PhysicsPipeline, QueryPipeline};
 use rapier2d::dynamics::{IntegrationParameters, IslandManager, RigidBodyHandle, RigidBodySet, ImpulseJointSet, MultibodyJointSet, CCDSolver};
 use rapier2d::geometry::{BroadPhase, ColliderSet, NarrowPhase, ColliderHandle};
 
@@ -164,16 +164,5 @@ pub async fn wasm_handle_mouse_up(mousex: f32, mousey: f32) {
             state.attached_charge = 0;
             *BASE_STATE.write().expect("could not obtain write") = state.clone();
         }
-    }
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-    use std::thread;
-    use std::time::Duration;
-
-    #[test]
-    fn it_works() {
     }
 }
